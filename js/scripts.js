@@ -1,6 +1,8 @@
 'use strict';
 
 var ANIMATIONTIME = " 0.32s";
+var DISSAPPEARANIMATION = "dissappear";
+var SWINGLEFTANIMATION = "swing-left";
 
 var useButton = document.querySelector('#use');
 var dropButton = document.querySelector('#drop');
@@ -20,7 +22,7 @@ function animater(object,animateAttribute){
 }
 
 function dissappearAnimation(object){
-    return animater(object,"dissappear");
+    return animater(object, DISSAPPEARANIMATION);
 }
 
 
@@ -28,10 +30,10 @@ buttonSection.addEventListener('click',function(e){
 
     // if click is on a button, animate 
     if (e.target === useButton){
-        animater(useButton,"swing-left");
+        animater(useButton,SWINGLEFTANIMATION);
         dissappearAnimation(dropButton);
     } else {
-        animater(dropButton,"swing-left");
+        animater(dropButton,SWINGLEFTANIMATION);
         dissappearAnimation(useButton);
     }
     dissappearAnimation(landingText);
