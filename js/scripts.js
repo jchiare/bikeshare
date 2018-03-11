@@ -9,39 +9,29 @@ var appName = document.querySelector('#name');
 var orText = document.querySelector('#or');
 
 
-function addAnimation(object,animateAttribute){
-    return object.style.animation = animateAttribute + animationTime;
-}
-
 function hideObject(object){
-    return object.style.display = "none";
+    return object.target.style.display = "none";
 }
 
-
-function textAnimation(){
-    addAnimation(landingText,"dissappear");
-    addAnimation(orText,"dissappear");
+function animater(object,attribute){
+    return addAnimation(object,attribute);
 }
 
-function buttonAnimation(button,animateAttribute){
-    addAnimation(button,animateAttribute);
-    // hide button / text from landing page after animation ends
-    setTimeout(function(){
-        hideObject(button);
-        hideObject(landingText);
-        hideObject(orText);
-    },600);
+function addAnimation(object,animateAttribute){
+    object.style.animation = animateAttribute + animationTime;
+    object.addEventListener("animationend",hideObject);
 }
-
 
 useButton.addEventListener('click',function(){
-    buttonAnimation(this,"swing-left");
-    buttonAnimation(dropButton,"dissappear");
-    textAnimation();
+    animater(this,"swing-left");
+    animater(dropButton,"dissappear");
+    animater(landingText,"dissappear");
+    animater(orText,"dissappear");
 });
 
 dropButton.addEventListener('click',function(){
-    buttonAnimation(this,"swing-left");
-    buttonAnimation(useButton,"dissappear");
-    textAnimation();
+    animater(this,"swing-left");
+    animater(useButton,"dissappear");
+    animater(landingText,"dissappear");
+    animater(orText,"dissappear");
 });
