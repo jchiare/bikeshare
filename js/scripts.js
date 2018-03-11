@@ -1,37 +1,39 @@
 'use strict';
 
-var animationTime = " 0.6s";
+var ANIMATIONTIME = " 0.32s";
 
 var useButton = document.querySelector('#use');
 var dropButton = document.querySelector('#drop');
 var landingText = document.querySelector('#landing');
 var appName = document.querySelector('#name');
 var orText = document.querySelector('#or');
+var buttonSection = document.querySelector('#button-section');
 
 
 function hideObject(object){
     return object.target.style.display = "none";
 }
 
-function animater(object,attribute){
-    return addAnimation(object,attribute);
-}
-
-function addAnimation(object,animateAttribute){
-    object.style.animation = animateAttribute + animationTime;
+function animater(object,animateAttribute){
+    object.style.animation = animateAttribute + ANIMATIONTIME + ' ease-in';
     object.addEventListener("animationend",hideObject);
 }
 
-useButton.addEventListener('click',function(){
-    animater(this,"swing-left");
-    animater(dropButton,"dissappear");
-    animater(landingText,"dissappear");
-    animater(orText,"dissappear");
-});
+function dissappearAnimation(object){
+    return animater(object,"dissappear");
+}
 
-dropButton.addEventListener('click',function(){
-    animater(this,"swing-left");
-    animater(useButton,"dissappear");
-    animater(landingText,"dissappear");
-    animater(orText,"dissappear");
-});
+
+buttonSection.addEventListener('click',function(e){
+
+    // if click is on a button, animate 
+    if (e.target === useButton){
+        animater(useButton,"swing-left");
+        dissappearAnimation(dropButton);
+    } else {
+        animater(dropButton,"swing-left");
+        dissappearAnimation(useButton);
+    }
+    dissappearAnimation(landingText);
+    dissappearAnimation(orText);
+})
