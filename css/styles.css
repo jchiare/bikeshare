@@ -44,15 +44,15 @@ button:hover {
 }
 
 #dot1 {
-  animation:dot1 2.5s infinite;
+  animation:dot1 2s infinite;
 }
 
 #dot2 {
-  animation:dot2 2.5s infinite;
+  animation:dot2 2s infinite;
 }
 
 #dot3 {
-  animation:dot3 2.5s infinite;
+  animation:dot3 2s infinite;
 }
 
 @keyframes dissappear {
