@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Lobster');
+
+body {
+  display:flex;
+  flex-direction:column;
+  background:#00a954;
+}
+
+section {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#name {
+  color:#DCF1F8;
+  font-family: 'Lato', sans-serif;
+  margin-top:7vh;
+  margin-bottom:15vh;
+}
+
+#landing {
+  font-family: 'Lobster', cursive; 
+}
+
+button {
+  margin:1em;
+  padding:1.5em;
+  background-color: #DCF1F8;
+  border: 1.5px solid #BEE5F3;
+  border-radius:10em;
+  text-decoration:none;
+  font-family: 'Lato', sans-serif;
+  font-size:.9em;
+}
+
+button:hover {
+  background-color: #BEE5F3;
+  cursor:pointer;
+}
+
+@keyframes dissappear {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display:none;
+  }
+}
+
+@keyframes swing-left {
+  from {
+    transform: translate(0,0);
+    opacity:1;
+  }
+  to {
+    transform: translate(-1000%,0);
+    opacity:0;
+  } 
+}
