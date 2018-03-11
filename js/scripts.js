@@ -23,20 +23,23 @@ function animater(object,animateAttribute){
 }
 
 function dissappearAnimation(object){
-    return animater(object, DISSAPPEARANIMATION);
+    animater(object, DISSAPPEARANIMATION);
+    // always dissappear text
+    animater(landingText, DISSAPPEARANIMATION);
+    animater(orText, DISSAPPEARANIMATION);
 }
 
 
 buttonSection.addEventListener('click',function(e){
 
-    // add animation to specific buttons, animation depends on which button is clicked
-    if (e.target === useButton){
+    // add animation to specific buttons, animation depends on which button is clicked    
+    if (e.target.id === useButton.id){
         animater(useButton,SWINGLEFTANIMATION);
         dissappearAnimation(dropButton);
-    } else {
+    } 
+    else if (e.target.id === dropButton.id) {
         animater(dropButton,SWINGLEFTANIMATION);
         dissappearAnimation(useButton);
     }
-    dissappearAnimation(landingText);
-    dissappearAnimation(orText);
+    
 })
