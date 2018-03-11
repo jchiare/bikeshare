@@ -4,6 +4,7 @@ var ANIMATIONTIME = " 0.32s";
 var DISSAPPEARANIMATION = "dissappear";
 var SWINGLEFTANIMATION = "swing-left";
 
+
 var useButton = document.querySelector('#use');
 var dropButton = document.querySelector('#drop');
 var landingText = document.querySelector('#landing');
@@ -13,7 +14,7 @@ var buttonSection = document.querySelector('#button-section');
 
 
 function hideObject(object){
-    return object.target.style.display = "none";
+    return object.target.classList.add('hidden');
 }
 
 function animater(object,animateAttribute){
@@ -28,7 +29,7 @@ function dissappearAnimation(object){
 
 buttonSection.addEventListener('click',function(e){
 
-    // if click is on a button, animate 
+    // add animation to specific buttons, animation depends on which button is clicked
     if (e.target === useButton){
         animater(useButton,SWINGLEFTANIMATION);
         dissappearAnimation(dropButton);
