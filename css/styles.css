@@ -81,6 +81,11 @@ button:hover {
   animation:dot3 2s infinite;
 }
 
+/* remove drop-down arrow https://stackoverflow.com/questions/20937475/remove-datalist-dropdown-arrow-in-chrome */
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 @keyframes dissappear {
   0% {
     opacity:1;
