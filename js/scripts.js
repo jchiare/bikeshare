@@ -27,6 +27,7 @@ function dissappearAnimation(object){
     // always dissappear text
     animater(landingText, DISSAPPEARANIMATION);
     animater(orText, DISSAPPEARANIMATION);
+    return addSearchArea();
 }
 
 
