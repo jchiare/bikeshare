@@ -11,14 +11,22 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" async></script>
   <script src="js/afterlanding.js" async></script>
+  <script src="js/geolocation.js" async></script>
 
 </head>
 
 <body>
-    
+
     <section id="header">
         <h1 id="name">Toronto Bike Share App</h1>
-        <input type="search" id="input" class="hidden" placeholder=" Enter stress address" autofocus></input>
+    </section>
+
+    <section class="hidden" id="if-use-bike">
+        <button id="location">Click me to use current location</button>
+    </section>
+
+    <section class="hidden" id="after-landing-page">
+            <input type="search" id="input" placeholder=" Enter stress address" autofocus></input>
     </section>
   
     <section>
