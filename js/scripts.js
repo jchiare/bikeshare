@@ -1,29 +1,28 @@
 'use strict';
 
-var useButton = document.querySelector('#use');
-var dropButton = document.querySelector('#drop');
-var landingText = document.querySelector('#landing');
-var appName = document.querySelector('#name');
-var orText = document.querySelector('#or');
-var buttonSection = document.querySelector('#button-section');
+var use_button = document.querySelector('#use');
+var drop_off_bike_button = document.querySelector('#drop');
+var landing_page_text = document.querySelector('#landing');
+var or_landing_page_text = document.querySelector('#or');
+var button_landing_page_section = document.querySelector('#button-section');
 
 
-function hideObject(object){
+function HideObject(object){
     return object.classList.add('hidden');
 }
 
 function AfterLandingPageAction(target){
-    addSearchArea();
+    AddSearchArea();
     ShowButton();
 }
 
-buttonSection.addEventListener('click',function(e){
+button_landing_page_section.addEventListener('click',function(e){
   
-    if (e.target.id === useButton.id || e.target.id === dropButton.id){
-        hideObject(useButton);
-        hideObject(dropButton);
-        hideObject(landingText);
-        hideObject(orText);
+    if (e.target.id === use_button.id || e.target.id === drop_off_bike_button.id){
+        HideObject(use_button);
+        HideObject(drop_off_bike_button);
+        HideObject(landing_page_text);
+        HideObject(or_landing_page_text);
         AfterLandingPageAction(e.target.id);
         GetLocation();
     } 

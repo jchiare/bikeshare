@@ -1,5 +1,6 @@
 
-var findButton = document.querySelector('#if-use-bike');
+var current_location_section = document.querySelector('#if-use-bike');
+var current_location_button = document.querySelector('#location');
 
 function GetLocation(){
     if ("geolocation" in navigator) {
@@ -12,6 +13,9 @@ function GetLocation(){
       }
 }
 
-findButton.addEventListener('click',function(){
-    GetLocation();
+current_location_section.addEventListener('click',function(e){
+    if (e.target.id === current_location_button.id ){
+        GetLocation();
+        GetData();
+    }
 })

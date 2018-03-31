@@ -1,13 +1,13 @@
 'use strict';
 
-var searchArea = document.querySelector('#after-landing-page');
+var search_input_area = document.querySelector('#after-landing-page');
 
-function addSearchArea(){
-    searchArea.classList.remove = 'hidden';
-    searchArea.style.display = 'flex';
+function AddSearchArea(){
+    search_input_area.classList.remove = 'hidden';
+    search_input_area.style.display = 'flex';
 }
 
 function ShowButton(){
-    findButton.classList.remove = 'hidden';
-    findButton.style.display = 'flex';
+    current_location_section.classList.remove = 'hidden';
+    current_location_section.style.display = 'flex';
 }
