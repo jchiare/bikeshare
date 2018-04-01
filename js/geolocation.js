@@ -16,6 +16,5 @@ function GetLocation(){
 current_location_section.addEventListener('click',function(e){
     if (e.target.id === current_location_button.id ){
         GetLocation();
-        GetData();
     }
 })
