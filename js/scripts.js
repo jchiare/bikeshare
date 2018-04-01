@@ -31,4 +31,5 @@ button_landing_page_section.addEventListener('click',function(e){
 
 window.onload = function(){
     GetStationHeaders();
+    GetStationData();
 };

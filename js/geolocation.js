@@ -7,10 +7,7 @@ function GetLocation(){
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log(position.coords.latitude + ' ' + position.coords.longitude);
           });
-    
-      } else {
-        console.log("shit");
-      }
+      } 
 }
 
 current_location_section.addEventListener('click',function(e){
