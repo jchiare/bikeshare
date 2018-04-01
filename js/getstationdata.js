@@ -1,6 +1,3 @@
-// this should always be running in the background ... maybes?
-
-var refresh_data_timer = 0;
 
 function GetStationData(){
     axios.get('https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_status.json')
