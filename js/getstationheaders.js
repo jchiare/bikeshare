@@ -1,6 +1,3 @@
-
-//var searchArea = 
-
 var station_names = new Map();
 var station_latitude = new Map();
 var station_longitude = new Map();
