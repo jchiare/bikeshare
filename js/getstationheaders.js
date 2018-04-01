@@ -2,15 +2,12 @@ var station_names = new Map();
 var station_latitude = new Map();
 var station_longitude = new Map();
 
-function ParseResponseData(data){
+function ParseHeadersResponseData(data){
     data.forEach(function(station){
-        station_names.set(station.station_id,station.name);
-        station_latitude.set(station.station_id,station.lat);
-        station_longitude.set(station.station_id,station.lon);
+        station_names.set(station.name,station.station_id);
+        station_latitude.set(station.lat,station.station_id);
+        station_longitude.set(station.lon,station.station_id);
     });
-    console.log(station_names);
-    console.log(station_latitude);
-    console.log(station_longitude);
 }
 
 function GetStationHeaders(){
@@ -18,7 +15,7 @@ function GetStationHeaders(){
     .then(function(response){
         if (response.status == 200){
             var data = response.data.data['stations'];
-            ParseResponseData(data);
+            ParseHeadersResponseData(data);
         }
     })
     .catch(function(error){
