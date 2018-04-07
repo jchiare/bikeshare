@@ -14,8 +14,8 @@ function AfterLandingPageAction(){
     HideObject(drop_off_bike_button);
     HideObject(landing_page_text);
     HideObject(or_landing_page_text);
-    ShowObjects(search_input_area);
-    ShowObjects(current_location_section);
+    ShowObject(search_input_area);
+    ShowObject(current_location_section);
     GetLocation();
 }
 

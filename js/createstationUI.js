@@ -22,6 +22,6 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     } else {
         AddStationData('p',bikes_available,'Bikes available:',this_station); // add dock amounts
     }
-    AddStationData('p',time_last_updated,'Last Updated:',this_station); // add last time updated
+    AddStationData('p',moment(time_last_updated).format('dddd, MMMM Do, YYYY h:mm:ss A'),'Last Updated:',this_station); // add last time updated
     place_invididual_station_ui.appendChild(this_station);
 }
