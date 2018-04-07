@@ -4,10 +4,8 @@ var search_station_area = document.querySelector('#input');
 search_station_area.addEventListener('input',SearchStationArea);
 search_station_area.addEventListener('keypress',SearchStationArea);
 
-
 function SearchStationArea(event){
-
-    // if user press 'enter', search for the station
+    // if user presses 'enter', search for the station
     if (event.type === 'keypress' && event.key === 'Enter'){
         station_names.forEach(function(id,name){
             if (name.toLowerCase().includes(user_input)){
