@@ -80,6 +80,12 @@ button:hover {
   border-radius:.3em;
 }
 
+#individual-station-data {
+  display:flex;
+  flex-direction: column;
+  align-items:initial;
+}
+
 #dot1 {
   animation:dot1 2s infinite;
 }
@@ -90,13 +96,6 @@ button:hover {
 
 #dot3 {
   animation:dot3 2s infinite;
-}
-
-.bikeshare {
-  background-color:#7FDBFF;
-  padding:0.1em 1em 1em 1em;
-  margin:1em 0.5em 1em 1em;
-  border-radius:.3em;
 }
 
 @keyframes dissappear {
