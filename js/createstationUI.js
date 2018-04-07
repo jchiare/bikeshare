@@ -21,3 +21,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     AddStationData('p',time_last_updated,'Last Updated:',this_station); // add last time updated
     place_invididual_station_ui.appendChild(this_station);
 }
+
+function DeleteStaleStationUI(station_name){
+    
+}
