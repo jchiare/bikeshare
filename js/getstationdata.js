@@ -4,9 +4,9 @@ var station_last_report_timestamp = new Map();
 
 function ParseStationData(data){
     data.forEach(function(station){
-        bikes_available_amount.set(station.num_bikes_available,station.station_id);
-        docks_available_amount.set(station.num_docks_available,station.station_id);
-        station_last_report_timestamp.set(station.last_reported,station.station_id);
+        bikes_available_amount.set(station.station_id,station.num_bikes_available);
+        docks_available_amount.set(station.station_id,station.num_docks_available);
+        station_last_report_timestamp.set(station.station_id,station.last_reported);
     })
 }
 

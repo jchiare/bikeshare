@@ -11,14 +11,16 @@ function SearchStationArea(event){
     if (event.type === 'keypress' && event.key === 'Enter'){
         station_names.forEach(function(id,name){
             if (name.toLowerCase().includes(user_input)){
-                console.log(name + ' ' + id);
+                CreateStationUI(name,
+                                docks_available_amount.get(id),
+                                bikes_available_amount.get(id),
+                                station_last_report_timestamp.get(id))
             }
         })
     }
-    // otherwise, keep appending value to 
+    // otherwise, keep appending value to user_input
     else if (event.type === 'input'){
         user_input = this.value.toLowerCase();
-        console.log(this.value);
     }
     
 }
