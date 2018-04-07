@@ -1,4 +1,3 @@
-
 var current_location_section = document.querySelector('#if-use-bike');
 var current_location_button = document.querySelector('#location');
 
