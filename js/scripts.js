@@ -8,8 +8,8 @@ var or_landing_page_text = document.querySelector('#or');
 var button_landing_page_section = document.querySelector('#button-section');
 
 function AfterLandingPageAction(){
-    ShowElements(search_input_area);
-    ShowElements(current_location_section);
+    ShowObjects(search_input_area);
+    ShowObjects(current_location_section);
     GetLocation();
 }
 
