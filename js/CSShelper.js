@@ -1,8 +1,8 @@
 var search_input_area = document.querySelector('#after-landing-page');
 
-function ShowElements(element){
-    element.classList.remove = 'hidden';
-    element.style.display = 'flex';
+function ShowObjects(object){
+    object.classList.remove = 'hidden';
+    object.style.display = 'flex';
 }
 
 function HideObject(object){
