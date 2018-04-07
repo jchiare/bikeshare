@@ -15,6 +15,7 @@ function AddStationData(HTML_element,data_value,data_name,parent_element){
 function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated){
     var this_station = CreateIndividualStationDiv();
     AddStationData('h2',station_name,'',this_station); // add station name
+
     // add data depending on if the user wants to take a bike or drop off a bike
     if (hide_bike_value){
         AddStationData('p',docks_available,'Docks available:',this_station); // add bike amount

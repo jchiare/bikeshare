@@ -10,6 +10,10 @@ var or_landing_page_text = document.querySelector('#or');
 var button_landing_page_section = document.querySelector('#button-section');
 
 function AfterLandingPageAction(){
+    HideObject(use_button);
+    HideObject(drop_off_bike_button);
+    HideObject(landing_page_text);
+    HideObject(or_landing_page_text);
     ShowObjects(search_input_area);
     ShowObjects(current_location_section);
     GetLocation();
@@ -17,18 +21,14 @@ function AfterLandingPageAction(){
 
 // Click a button to get the party started
 button_landing_page_section.addEventListener('click',function(e){
-    if (e.target.id === use_button.id || e.target.id === drop_off_bike_button.id){
-        HideObject(use_button);
-        HideObject(drop_off_bike_button);
-        HideObject(landing_page_text);
-        HideObject(or_landing_page_text);
+    if (e.target.id === use_button.id){
         AfterLandingPageAction();
-        if (e.target.id === use_button.id){
-            hide_bike_value = false;
-        } else {
-            hide_bike_value = true;
-        }
+        hide_bike_value = false;
     } 
+    else if (e.target.id === drop_off_bike_button.id){
+        AfterLandingPageAction();
+        hide_bike_value = true;
+    }
 })
 
 window.onload = function(){
