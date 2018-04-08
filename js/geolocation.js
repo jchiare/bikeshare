@@ -15,7 +15,7 @@ function GetLocation(){
           });
       } 
     console.log('hello');
-    console.log("geolocation" in navigator);
+    console.log(navigator.geolocation.getCurrentPosition(function(position){console.log(position)}));
 }
 
 current_location_section.addEventListener('click',function(e){
