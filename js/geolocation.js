@@ -12,6 +12,7 @@ function GetLocation(){
             debugger;
           });
       } 
+    console.log('hello');
 }
 
 current_location_section.addEventListener('click',function(e){
