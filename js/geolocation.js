@@ -4,7 +4,6 @@ var current_location_button = document.querySelector('#location');
 var user_lat;
 var user_lon;
 
-console.log('am I crazy?');
 
 function GetLocation(){
     if ("geolocation" in navigator) {
