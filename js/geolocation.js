@@ -4,12 +4,6 @@ var current_location_button = document.querySelector('#location');
 var user_lat;
 var user_lon;
 
-var geolocation_options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-};
-
 function SuccessGeolocationCall(position){
     user_lat = position.coords.latitude;
     user_lon = position.coords.longitude;
@@ -20,7 +14,7 @@ function GeolocationError(error){
 }
 
 function GetLocation(){
-    navigator.geolocation.getCurrentPosition(SuccessGeolocationCall,GeolocationError,geolocation_options);
+    navigator.geolocation.getCurrentPosition(SuccessGeolocationCall,GeolocationError);
 }
 
 current_location_section.addEventListener('click',function(e){
