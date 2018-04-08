@@ -17,6 +17,7 @@ function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
         {latitude:station_lat , longitude:station_lon},
         {latitude:user_lat , longitude:user_lon}
     );
+    debugger;
     return distance;
 }
 
