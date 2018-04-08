@@ -15,12 +15,13 @@ function AddStationData(HTML_element,data_value,data_name,parent_element){
 function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
     if (user_lat === undefined || user_lon === undefined){
         return ' geolocation not currently working';
+    } else {
+        var distance = geolib.getDistance(
+            {latitude:station_lat , longitude:station_lon},
+            {latitude:user_lat , longitude:user_lon}
+        );
+        return distance;
     }
-    var distance = geolib.getDistance(
-        {latitude:station_lat , longitude:station_lon},
-        {latitude:user_lat , longitude:user_lon}
-    );
-    return distance;
 }
 
 function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated,latitude,longitude){
@@ -35,7 +36,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     }
     
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
-    AddStationData('p',station_distance,'Station is: ',this_station);
+    AddStationData('p',str(station_distance) + ' meters away','Station is: ',this_station);
 
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     place_invididual_station_ui.appendChild(this_station);
