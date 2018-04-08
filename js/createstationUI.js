@@ -12,7 +12,15 @@ function AddStationData(HTML_element,data_value,data_name,parent_element){
     parent_element.appendChild(station_data_item);
 }
 
-function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated){
+function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
+    var distance = geolib.getDistance(
+        {latitude:station_lat , longitude:station_lon},
+        {latitude:user_lat , longitude:user_lon}
+    );
+    return distance;
+}
+
+function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated,latitude,longitude){
     var this_station = CreateIndividualStationDiv();
     AddStationData('h2',station_name,'',this_station); // add station name
 
@@ -22,6 +30,10 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     } else {
         AddStationData('p',bikes_available,'Bikes available:',this_station); // add dock amounts
     }
-    AddStationData('p',moment(time_last_updated).format('dddd, MMMM Do, YYYY h:mm:ss A'),'Last Updated:',this_station); // add last time updated
+
+    var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
+    AddStationData('p',distance,'Station is: ',this_station);
+
+    AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     place_invididual_station_ui.appendChild(this_station);
 }

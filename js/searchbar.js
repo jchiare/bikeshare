@@ -16,7 +16,9 @@ function SearchStationArea(event){
                  CreateStationUI(name,
                                  docks_available_amount.get(id),
                                  bikes_available_amount.get(id),
-                                 station_last_report_timestamp.get(id));
+                                 station_last_report_timestamp.get(id),
+                                 station_latitude.get(id),
+                                 station_longitude.get(id));
              }
          })   
     }

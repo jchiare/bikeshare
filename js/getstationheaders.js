@@ -6,8 +6,8 @@ var station_longitude = new Map();
 function ParseHeadersResponseData(data){
     data.forEach(function(station){
         station_names.set(station.name,station.station_id);
-        station_latitude.set(station.lat,station.station_id);
-        station_longitude.set(station.lon,station.station_id);
+        station_latitude.set(station.station_id,station.lat);
+        station_longitude.set(station.station_id,station.lon);
     });
 }
 

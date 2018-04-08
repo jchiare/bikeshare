@@ -144,10 +144,3 @@ button:hover {
     opacity:1;
   }
 }
-
-@media (max-width: 480px){
-
-  #header{
-    display:none;
-  }
-}

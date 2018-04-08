@@ -8,14 +8,19 @@ var drop_off_bike_button = document.querySelector('#drop');
 var landing_page_text = document.querySelector('#landing');
 var or_landing_page_text = document.querySelector('#or');
 var button_landing_page_section = document.querySelector('#button-section');
+var app_name = document.querySelector('#header');
 
 function AfterLandingPageAction(){
     HideObject(use_button);
     HideObject(drop_off_bike_button);
     HideObject(landing_page_text);
     HideObject(or_landing_page_text);
+    HideObject(app_name);
+
     ShowObject(search_input_area);
     ShowObject(current_location_section);
+
+    // ask to get user's location after they click the first button
     GetLocation();
 }
 
@@ -31,6 +36,7 @@ button_landing_page_section.addEventListener('click',function(e){
     }
 })
 
+// might as well make the API calls early 
 window.onload = function(){
     GetStationHeaders();
     GetStationData();
