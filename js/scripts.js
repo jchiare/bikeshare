@@ -22,6 +22,7 @@ function AfterLandingPageAction(){
 
     // ask to get user's location after they click the first button
     GetLocation();
+    console.log('should have called getlocation by meow');
 }
 
 // Click a button to get the party started
