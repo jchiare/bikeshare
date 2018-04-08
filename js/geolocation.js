@@ -9,6 +9,7 @@ function GetLocation(){
         navigator.geolocation.getCurrentPosition(function(position) {
             user_lat = position.coords.latitude;
             user_lon = position.coords.longitude;
+            debugger;
           });
       } 
 }
