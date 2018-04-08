@@ -30,7 +30,11 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     } else {
         AddStationData('p',bikes_available,'Bikes available:',this_station); // add dock amounts
     }
-
+    console.log(latitude);
+    console.log(longitude);
+    console.log(user_lat);
+    console.log(user_lon);
+    debugger;
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
     AddStationData('p',distance,'Station is: ',this_station);
 
