@@ -33,7 +33,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     }
     
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
-    AddStationData('p',distance,'Station is: ',this_station);
+    AddStationData('p',station_distance,'Station is: ',this_station);
 
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     place_invididual_station_ui.appendChild(this_station);
