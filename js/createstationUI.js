@@ -13,11 +13,13 @@ function AddStationData(HTML_element,data_value,data_name,parent_element){
 }
 
 function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
+    if (user_lat === undefined || user_lon === undefined){
+        return ' geolocation not currently working';
+    }
     var distance = geolib.getDistance(
         {latitude:station_lat , longitude:station_lon},
         {latitude:user_lat , longitude:user_lon}
     );
-    debugger;
     return distance;
 }
 
