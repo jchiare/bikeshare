@@ -6,15 +6,11 @@ var user_lon;
 
 
 function GetLocation(){
-    if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            user_lat = position.coords.latitude;
-            user_lon = position.coords.longitude;
-            debugger;
-          });
-      } 
-    console.log('hello');
-    console.log(navigator.geolocation.getCurrentPosition(function(position){console.log(position)}));
+    navigator.geolocation.getCurrentPosition(function(position) {
+        user_lat = position.coords.latitude;
+        user_lon = position.coords.longitude;
+        debugger;
+    });
 }
 
 current_location_section.addEventListener('click',function(e){
