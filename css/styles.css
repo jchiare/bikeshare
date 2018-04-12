@@ -12,6 +12,16 @@ section {
   align-items:center;
 }
 
+h2 {
+  margin-bottom:0;
+}
+
+.individual-station p:first-of-type{
+  margin-top:0;
+  color:#808080;
+  font-style: italic;
+}
+
 #header {
   flex-direction:column;
   margin-bottom:-2em;
