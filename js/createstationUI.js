@@ -14,7 +14,7 @@ function AddStationData(HTML_element,data_value,data_name,parent_element){
 
 function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
     if (user_lat === undefined || user_lon === undefined){
-        return 'location currently undetermined';
+        return 'geolocation not available';
     } else {
         var distance = geolib.getDistance(
             {latitude:station_lat , longitude:station_lon},
@@ -29,7 +29,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     AddStationData('h2',station_name,'',this_station); // add station name
 
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
-    AddStationData('p',String(station_distance) + ' meters away','',this_station);
+    AddStationData('p',String(station_distance) + '','',this_station);
 
     // add data depending on if the user wants to take a bike or drop off a bike
     if (hide_bike_value){
