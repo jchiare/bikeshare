@@ -20,18 +20,21 @@ function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
             {latitude:station_lat , longitude:station_lon},
             {latitude:user_lat , longitude:user_lon}
         );
-        return (String(distance) + 'meters away');
+        return (String(distance) + ' meters away');
     }
 }
 
 function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated,latitude,longitude){
-    var this_station = CreateIndividualStationDiv();
+    
+    var this_station = CreateIndividualStationDiv(); // create station div
+
     AddStationData('h2',station_name,'',this_station); // add station name
 
+    // calculate station distance from user
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
-    AddStationData('p',String(station_distance) + ' ','',this_station);
+    AddStationData('p',String(station_distance) + '','',this_station);
 
-    // add data depending on if the user wants to take a bike or drop off a bike
+    // add bike or dock availability data, depending which value is relevant to user
     if (hide_bike_value){
         AddStationData('p',docks_available,'Docks available:',this_station); // add bike amount
     } else {
@@ -39,5 +42,6 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     }
 
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
+    
     place_invididual_station_ui.appendChild(this_station);
 }
