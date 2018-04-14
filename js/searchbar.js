@@ -20,7 +20,8 @@ function SearchStationArea(event){
                                  station_latitude.get(id),
                                  station_longitude.get(id));
              }
-         })   
+         })
+         place_invididual_station_ui.appendChild(fragment);   
     }
    
 }

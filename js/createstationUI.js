@@ -1,4 +1,5 @@
 var place_invididual_station_ui = document.querySelector('#individual-station-data');
+var fragment = document.createDocumentFragment();
 
 function CreateIndividualStationDiv(){
     var invidual_station_UI = document.createElement('div');
@@ -47,5 +48,5 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
 
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     
-    place_invididual_station_ui.appendChild(this_station);
+    fragment.appendChild(this_station);
 }
