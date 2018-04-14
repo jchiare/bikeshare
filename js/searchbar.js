@@ -1,8 +1,8 @@
 var search_station_area = document.querySelector('#input');
 search_station_area.addEventListener('input',SearchStationArea);
 
-function SortStationByDistance(){
-
+function compare(a,b){
+    return a.dataset.distance - b.dataset.distance
 }
 
 function SearchStationArea(event){
@@ -25,15 +25,11 @@ function SearchStationArea(event){
                                  station_longitude.get(id));
              }
          })
-
-        /*for (var item = 0; item < fragment.children.length; item++){
-             console.log(fragment.children[item]);
-         }
-         console.log(fragment.children);
-         place_invididual_station_ui.appendChild(fragment);*/
          init_fragment.sort(compare);
-         console.log(init_fragment);
-
+         while (init_fragment.length > 0){
+             fragment.appendChild(init_fragment.pop());
+         }
+         place_invididual_station_ui.appendChild(fragment);
     }
    
 }
