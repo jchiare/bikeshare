@@ -10,6 +10,9 @@ var or_landing_page_text = document.querySelector('#or');
 var button_landing_page_section = document.querySelector('#button-section');
 var app_name = document.querySelector('#header');
 
+// get time
+var time_paragraph = document.querySelector('#time');
+
 function AfterLandingPageAction(){
     HideObject(use_button);
     HideObject(drop_off_bike_button);
@@ -36,8 +39,14 @@ button_landing_page_section.addEventListener('click',function(e){
     }
 })
 
+function DisplayCurrentTime(){
+    time_paragraph.innerHTML = moment().format("h:mm:ss a");
+}
+
 // might as well make the API calls early 
 window.onload = function(){
     GetStationHeaders();
     GetStationData();
+
+    setInterval(DisplayCurrentTime,1000);
 };
