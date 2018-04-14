@@ -2,6 +2,14 @@ var place_invididual_station_ui = document.querySelector('#individual-station-da
 var fragment = document.createDocumentFragment();
 var init_fragment = [];
 
+function compare(a,b) {
+    if (a.dataset.distance < b.dataset.distance)
+      return -1;
+    if (a.dataset.distance > b.dataset.distance)
+      return 1;
+    return 0;
+  }
+
 function CreateIndividualStationDiv(){
     var invidual_station_UI = document.createElement('div');
     invidual_station_UI.classList.add('individual-station');
@@ -55,12 +63,6 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     
     init_fragment.push(this_station);
-    if (typeof(station_distance) != 'string'){
-        init_fragment.forEach(function(item,index){
-            console.log(item.dataset.distance);
-        })
-    }
-    
-    
+    init_fragment.sort(compare);
     //fragment.appendChild(this_station);
 }
