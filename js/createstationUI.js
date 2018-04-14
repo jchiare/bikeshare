@@ -20,7 +20,11 @@ function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
             {latitude:station_lat , longitude:station_lon},
             {latitude:user_lat , longitude:user_lon}
         );
-        return (String(distance) + ' meters away');
+        var compass = geolib.getCompassDirection(
+            {latitude:user_lat , longitude:user_lon},
+            {latitude:station_lat , longitude:station_lon}
+        );
+        return (String(distance) + ' meters away ' + '(' + compass.exact + ')');
     }
 }
 
