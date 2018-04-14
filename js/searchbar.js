@@ -25,11 +25,14 @@ function SearchStationArea(event){
                                  station_longitude.get(id));
              }
          })
-         for (var item = 0; item < fragment.children.length; item++){
+
+        /*for (var item = 0; item < fragment.children.length; item++){
              console.log(fragment.children[item]);
          }
          console.log(fragment.children);
-         place_invididual_station_ui.appendChild(fragment);   
+         place_invididual_station_ui.appendChild(fragment);*/
+         console.log(init_fragment);
+
     }
    
 }
