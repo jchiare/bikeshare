@@ -11,6 +11,7 @@ var geolocation_options = {
 function SuccessGeolocationCall(position){
     user_lat = position.coords.latitude;
     user_lon = position.coords.longitude;
+    console.log('run it!');
 }
 
 function GeolocationError(error){
