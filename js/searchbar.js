@@ -27,7 +27,7 @@ function SearchStationArea(event){
          })
          init_fragment.sort(compare);
          while (init_fragment.length > 0){
-             fragment.appendChild(init_fragment.pop());
+             fragment.appendChild(init_fragment.shift());
          }
          place_invididual_station_ui.appendChild(fragment);
     }
