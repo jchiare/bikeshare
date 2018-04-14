@@ -3,6 +3,8 @@ var fragment = document.createDocumentFragment();
 var init_fragment = [];
 
 function compare(a,b) {
+    console.log(a.dataset.distance);
+    console.log(b.dataset.distance);
     if (a.dataset.distance < b.dataset.distance)
       return -1;
     if (a.dataset.distance > b.dataset.distance)
@@ -63,6 +65,5 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     
     init_fragment.push(this_station);
-    init_fragment.sort(compare);
     //fragment.appendChild(this_station);
 }

@@ -31,6 +31,7 @@ function SearchStationArea(event){
          }
          console.log(fragment.children);
          place_invididual_station_ui.appendChild(fragment);*/
+         init_fragment.sort(compare);
          console.log(init_fragment);
 
     }
