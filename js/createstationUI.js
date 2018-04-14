@@ -5,11 +5,7 @@ var init_fragment = [];
 function compare(a,b) {
     console.log(a.dataset.distance);
     console.log(b.dataset.distance);
-    if (a.dataset.distance < b.dataset.distance)
-      return -1;
-    if (a.dataset.distance > b.dataset.distance)
-      return 1;
-    return 0;
+    return a.dataset.distance - b.dataset.distance
   }
 
 function CreateIndividualStationDiv(){
