@@ -1,6 +1,10 @@
 var search_station_area = document.querySelector('#input');
 search_station_area.addEventListener('input',SearchStationArea);
 
+function SortStationByDistance(){
+
+}
+
 function SearchStationArea(event){
     
     // clear individual station UIs for each event -- to display freshest data according to search field
@@ -21,6 +25,10 @@ function SearchStationArea(event){
                                  station_longitude.get(id));
              }
          })
+         for (var item = 0; item < fragment.children.length; item++){
+             console.log(fragment.children[item]);
+         }
+         console.log(fragment.children);
          place_invididual_station_ui.appendChild(fragment);   
     }
    

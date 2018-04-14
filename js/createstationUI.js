@@ -25,7 +25,7 @@ function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
             {latitude:user_lat , longitude:user_lon},
             {latitude:station_lat , longitude:station_lon}
         );
-        return (String(distance) + ' meters away ' + '(' + compass.rough + ')');
+        return [distance,(String(distance) + ' meters away ' + '(' + compass.rough + ')')];
     }
 }
 
@@ -37,7 +37,12 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
 
     // calculate station distance from user
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
-    AddStationData('p',String(station_distance) + '','',this_station);
+    if (typeof(station_distance) != 'string'){
+        this_station.dataset.distance = station_distance[0];
+        AddStationData('p',String(station_distance[1]) + '','',this_station);
+    } else {
+        AddStationData('p',station_distance + '','',this_station);
+    }
 
     // add bike or dock availability data, depending which value is relevant to user
     if (hide_bike_value){
