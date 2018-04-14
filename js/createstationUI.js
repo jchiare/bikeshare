@@ -55,4 +55,8 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
     
     init_fragment.push(this_station);
+    init_fragment.sort(compare);
+    while (init_fragment.length > 0){
+        fragment.appendChild(init_fragment.shift());
+    }
 }
