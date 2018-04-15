@@ -69,7 +69,6 @@ h2 {
 #location {
   font-size:80%;
   animation: dissappear 1s reverse;
-
 }
 
 button {
@@ -90,6 +89,18 @@ button:hover {
 
 .hidden {
   display:none;
+}
+
+#geolocation-icon { 
+  position:absolute;
+  margin:1em;
+  animation: dissappear 1s reverse;
+  color:#dd4545;
+}
+
+.svg-inline--fa {
+  stroke: black;
+  stroke-width: 5px;
 }
 
 .individual-station {

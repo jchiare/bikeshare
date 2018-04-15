@@ -25,10 +25,12 @@ function SearchStationArea(event){
                                  station_longitude.get(id));
              }
          })
+         // sort array of station divs by closest distance
          init_fragment.sort(compare);
          while (init_fragment.length > 0){
              fragment.appendChild(init_fragment.shift());
          }
+         // add all divs at once
          place_invididual_station_ui.appendChild(fragment);
     }
    

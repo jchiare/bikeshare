@@ -9,6 +9,7 @@ var landing_page_text = document.querySelector('#landing');
 var or_landing_page_text = document.querySelector('#or');
 var button_landing_page_section = document.querySelector('#button-section');
 var app_name = document.querySelector('#header');
+var geolocation_icon = document.querySelector('#geolocation-icon');
 
 // get time
 var time_paragraph = document.querySelector('#time');
@@ -22,6 +23,7 @@ function AfterLandingPageAction(){
 
     ShowObject(search_input_area);
     ShowObject(current_location_section);
+    ShowObject(geolocation_icon);
 
     // ask to get user's location after they click the first button
     GetLocation();
