@@ -12,7 +12,6 @@ function SuccessGeolocationCall(position){
     user_lat = position.coords.latitude;
     user_lon = position.coords.longitude;
     geolocation_icon.style.color = '#15ff89';
-    console.log('Geolocation running!');
 }
 
 function GeolocationError(error){

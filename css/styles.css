@@ -105,7 +105,7 @@ button:hover {
 
 .individual-station {
   background-color:#DCF1F8;
-  padding:0.1em 1em 1em 1em;
+  padding:0.1em 1em 0.1em 1em;
   margin:1em 0.5em 1em 1em;
   border-radius:.3em;
 }
@@ -114,6 +114,7 @@ button:hover {
   display:flex;
   flex-direction: column;
   align-items:initial;
+  max-width:48%;
 }
 
 #dot1 {
@@ -172,5 +173,11 @@ button:hover {
   }
   25%,100% {
     opacity:1;
+  }
+}
+
+@media screen and (max-width:585px){
+  #individual-station-data{
+    max-width:100%;
   }
 }
