@@ -8,9 +8,13 @@ function CreateIndividualStationDiv(){
     return invidual_station_UI;
 }
 
-function AddStationData(HTML_element,data_value,data_name,parent_element){
+function AddStationData(HTML_element,data_value,data_name,parent_element,CSS_class){
     var station_data_item = document.createElement(HTML_element);
     station_data_item.innerHTML = ('<strong> ' + data_name + '</strong> ' + data_value)
+
+    if (CSS_class){
+        station_data_item.classList.add(CSS_class);
+    }
     parent_element.appendChild(station_data_item);
 }
 
@@ -34,15 +38,15 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     
     var this_station = CreateIndividualStationDiv(); // create station div
 
-    AddStationData('h2',station_name,'',this_station); // add station name
+    AddStationData('h2',station_name,'',this_station,'center-text'); // add station name
 
     // calculate station distance from user
     var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
     if (typeof(station_distance) != 'string'){
         this_station.dataset.distance = station_distance[0];
-        AddStationData('p',String(station_distance[1]) + '','',this_station);
+        AddStationData('p',String(station_distance[1]) + '','',this_station,'center-text');
     } else {
-        AddStationData('p',station_distance + '','',this_station);
+        AddStationData('p',station_distance + '','',this_station,'center-text');
     }
 
     // add bike or dock availability data, depending which value is relevant to user
