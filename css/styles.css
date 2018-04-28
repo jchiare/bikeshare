@@ -17,11 +17,10 @@ h2 {
   margin-top:0.4em;
 }
 
-.individual-station p:first-of-type{
-  margin-top:0;
-  color:#808080;
-  font-style: italic;
+.hidden {
+  display:none;
 }
+
 
 #time { 
   position:fixed;
@@ -44,13 +43,10 @@ h2 {
   position:relative;
 }
 
-#landing {
-  font-family: 'Lobster', cursive; 
-}
+/*
+    SEARCH BAR
+*/
 
-.center-text {
-  text-align:center;
-}
 #input {
   justify-content: center;
   animation: dissappear 1s reverse;
@@ -69,10 +65,9 @@ h2 {
   outline: 0 none;
 }
 
-#location {
-  font-size:80%;
-  animation: dissappear 1s reverse;
-}
+/* 
+    BUTTONS
+*/
 
 button {
   margin:1em;
@@ -90,9 +85,14 @@ button:hover {
   cursor:pointer;
 }
 
-.hidden {
-  display:none;
+#location {
+  font-size:80%;
+  animation: dissappear 1s reverse;
 }
+
+/*
+    GEOLOCATION ICON
+*/
 
 #geolocation-icon { 
   position:absolute;
@@ -105,6 +105,10 @@ button:hover {
   stroke: black;
   stroke-width: 10px;
 }
+
+/* 
+    BIKE STATION UI
+*/
 
 .individual-station {
   background-color:#DCF1F8;
@@ -120,6 +124,24 @@ button:hover {
   max-width:48%;
 }
 
+.individual-station p:first-of-type{
+  margin-top:0;
+  color:#808080;
+  font-style: italic;
+}
+
+.center-text {
+  text-align:center;
+}
+
+/* 
+    DOTS
+*/ 
+
+#landing {
+  font-family: 'Lobster', cursive; 
+}
+
 #dot1 {
   animation:dot1 2s infinite;
 }
@@ -131,6 +153,10 @@ button:hover {
 #dot3 {
   animation:dot3 2s infinite;
 }
+
+/* 
+    ANIMATION SECTION
+*/
 
 @keyframes dissappear {
   0% {
@@ -178,6 +204,10 @@ button:hover {
     opacity:1;
   }
 }
+
+/*
+    RESPONSIVE DESIGN SECTION
+*/
 
 @media screen and (max-width:585px){
   #individual-station-data{
