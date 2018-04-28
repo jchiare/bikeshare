@@ -1,6 +1,8 @@
 var current_location_section = document.querySelector('#if-use-bike');
 var current_location_button = document.querySelector('#location');
 
+var geolocation_success = false;
+
 var user_lat;
 var user_lon;
 
@@ -12,6 +14,7 @@ function SuccessGeolocationCall(position){
     user_lat = position.coords.latitude;
     user_lon = position.coords.longitude;
     geolocation_icon.style.color = '#15ff89';
+    geolocation_success = true;
 }
 
 function GeolocationError(error){

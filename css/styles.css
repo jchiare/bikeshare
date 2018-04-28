@@ -21,7 +21,6 @@ h2 {
   display:none;
 }
 
-
 #time { 
   position:fixed;
   top:0;
@@ -122,6 +121,7 @@ button:hover {
   flex-direction: column;
   align-items:initial;
   max-width:48%;
+  text-align:center;
 }
 
 .individual-station p:first-of-type{
@@ -130,8 +130,12 @@ button:hover {
   font-style: italic;
 }
 
-.center-text {
-  text-align:center;
+/*
+    AVAILABLE BIKES
+*/
+
+.if-bike-amount {
+  
 }
 
 /* 
@@ -165,17 +169,6 @@ button:hover {
   100% {
     opacity:0;
   }
-}
-
-@keyframes swing-left {
-  from {
-    transform: translate(0,0);
-    opacity:1;
-  }
-  to {
-    transform: translate(-1000%,0);
-    opacity:0;
-  } 
 }
 
 @keyframes dot3 {
