@@ -14,7 +14,12 @@ function SearchStationArea(event){
     
     if (this.value !== ""){
          // get value from search field, and search stations via the name 
-         var user_input = this.value.toLowerCase();
+         var user_input;
+         if (this === search_station_area){
+            user_input = this.value.toLowerCase();
+         } else {
+             user_input = " ";
+         }
          station_names.forEach(function(id,name){
              if (name.toLowerCase().includes(user_input)){
                  CreateStationUI(name,
