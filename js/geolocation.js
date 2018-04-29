@@ -15,8 +15,7 @@ function SuccessGeolocationCall(position){
     user_lon = position.coords.longitude;
     geolocation_icon.style.color = '#15ff89';
     console.log(geolocation_icon);
-    console.log(geolocation_icon.firstChild);
-    geolocation_icon.firstChild.setAttribute("title","Geolocation Activated!");
+    geolocation_icon.setAttribute("title","Geolocation Activated!");
     geolocation_success = true;
     debugger;
 }
