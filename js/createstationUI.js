@@ -1,11 +1,10 @@
 var place_invididual_station_ui = document.querySelector('#individual-station-data');
 
-var station_distance;
-
 var fragment = document.createDocumentFragment();
 var init_fragment = [];
 
-function CreateIndividualStationDiv(){
+
+function BuildStationDiv(){
     var invidual_station_UI = document.createElement('div');
     invidual_station_UI.classList.add('individual-station');
     return invidual_station_UI;
@@ -35,13 +34,13 @@ function CalculateStationDistance(station_lat,station_lon,user_lat,user_lon){
 
 function CreateStationUI(station_name,docks_available,bikes_available,time_last_updated,latitude,longitude){
     
-    var this_station = CreateIndividualStationDiv(); // create station div
+    var this_station = BuildStationDiv(); // create station div
 
     AddStationData('h2',station_name,'',this_station); // add station name
 
     // calculate station distance from user
     if (geolocation_success){
-        station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
+        var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
         var station_compass = CalculateStationCompass(latitude,longitude,user_lat,user_lon);
         this_station.dataset.distance = station_distance;
         AddStationData('p',(station_distance + ' meters away ' + '(' + station_compass + ')'),'',this_station);
@@ -51,9 +50,9 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
 
     // add bike or dock availability data, depending which value is relevant to user
     if (hide_bike_value){
-        AddStationData('p',docks_available,'Docks available:',this_station); // add bike amount
+        AddStationData('p',docks_available,'Docks Available: ',this_station); // add bike amount
     } else {
-        AddStationData('p',bikes_available,'Bikes available:',this_station); // add dock amounts
+        AddStationData('p',bikes_available,'Bikes Available: ',this_station); // add dock amounts
     }
 
     AddStationData('p',moment(time_last_updated).fromNow(),'Last Updated:',this_station); // add last time updated
