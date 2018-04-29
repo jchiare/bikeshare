@@ -14,7 +14,7 @@ function SuccessGeolocationCall(position){
     user_lat = position.coords.latitude;
     user_lon = position.coords.longitude;
     geolocation_icon.style.color = '#15ff89';
-    geolocation_icon.setAttribute("title","Geolocation Activated!");
+    geolocation_icon.firstChild.setAttribute("title","Geolocation Activated!");
     geolocation_success = true;
 }
 
