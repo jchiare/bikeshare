@@ -49,6 +49,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
             window.open("http://maps.apple.com/?q=" + latitude + "," + longitude);
         };
         this_station.firstChild.classList.add('geolocation-actived');
+        this_station.firstChild.style.title = 'Click for directions';
 
         AddStationData('p',(station_distance + ' meters away ' + '(' + station_compass + ')'),'',this_station);
     } else {
