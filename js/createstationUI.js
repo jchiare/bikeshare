@@ -44,10 +44,10 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
         var station_compass = CalculateStationCompass(latitude,longitude,user_lat,user_lon);
 
         this_station.dataset.distance = station_distance;
-        this_station.dataset.latitude = latitude;
-        this_station.dataset.longitude = longitude;
-        console.log(this_station);
-        debugger;
+
+        this_station.firstChild.onclick = function(){
+            window.open("http://maps.apple.com/?q=" + latitude + "," + longitude);
+        };
 
         AddStationData('p',(station_distance + ' meters away ' + '(' + station_compass + ')'),'',this_station);
     } else {
