@@ -42,7 +42,13 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
     if (geolocation_success){
         var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
         var station_compass = CalculateStationCompass(latitude,longitude,user_lat,user_lon);
+
         this_station.dataset.distance = station_distance;
+        this_station.dataset.latitude = latitude;
+        this_station.dataset.longitude = longitude;
+        console.log(this_station);
+        debugger;
+
         AddStationData('p',(station_distance + ' meters away ' + '(' + station_compass + ')'),'',this_station);
     } else {
         AddStationData('p','Geolocation not currently available.','',this_station);

@@ -14,6 +14,10 @@ var geolocation_icon = document.querySelector('#geolocation-icon');
 // get time
 var time_paragraph = document.querySelector('#time');
 
+function DisplayCurrentTime(){
+    time_paragraph.innerHTML = moment().format("h:mm:ss a");
+}
+
 function AfterLandingPageAction(){
     HideObject(use_button);
     HideObject(drop_off_bike_button);
@@ -40,10 +44,6 @@ button_landing_page_section.addEventListener('click',function(e){
         hide_bike_value = true;
     }
 })
-
-function DisplayCurrentTime(){
-    time_paragraph.innerHTML = moment().format("h:mm:ss a");
-}
 
 // might as well make the API calls early 
 window.onload = function(){

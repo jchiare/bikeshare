@@ -25,4 +25,3 @@ function GetStationHeaders(){
         console.log(error);
     });
 }
-
