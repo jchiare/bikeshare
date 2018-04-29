@@ -17,6 +17,10 @@ h2 {
   margin-top:0.4em;
 }
 
+.geolocation-actived:hover{
+  cursor:pointer;
+}
+
 .hidden {
   display:none;
 }

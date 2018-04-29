@@ -38,7 +38,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
 
     AddStationData('h2',station_name,'',this_station); // add station name
 
-    // calculate station distance from user
+    // calculate station distance from user -- sorry for the spagetti here
     if (geolocation_success){
         var station_distance = CalculateStationDistance(latitude,longitude,user_lat,user_lon);
         var station_compass = CalculateStationCompass(latitude,longitude,user_lat,user_lon);
@@ -48,6 +48,7 @@ function CreateStationUI(station_name,docks_available,bikes_available,time_last_
         this_station.firstChild.onclick = function(){
             window.open("http://maps.apple.com/?q=" + latitude + "," + longitude);
         };
+        this_station.firstChild.classlist.add('geolocation-actived');
 
         AddStationData('p',(station_distance + ' meters away ' + '(' + station_compass + ')'),'',this_station);
     } else {
